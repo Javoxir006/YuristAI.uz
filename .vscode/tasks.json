@@ -1,0 +1,96 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run YuristAI.uz API",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz\\.venv\\Scripts\\uvicorn.exe",
+			"args": [
+				"main:app",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"8000"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run YuristAI.uz FastAPI on port 8001",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz\\.venv\\Scripts\\uvicorn.exe",
+			"args": [
+				"main:app",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"8001"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run YuristAI.uz API with OpenAI support",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz\\.venv\\Scripts\\uvicorn.exe",
+			"args": [
+				"main:app",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"8002"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Send QIL batch request",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz - Copy\\.venv\\Scripts\\python.exe",
+			"args": [
+				"test_request.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Read PDF spec",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz - Copy\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"from pathlib import Path\nfrom pypdf import PdfReader\npdf_path = Path(r'C:\\Users\\Javoh\\AppData\\Local\\Packages\\38833FF26BA1D.UnigramPreview_g9c9v27vpyspw\\LocalState\\0\\documents\\RAG API   test spetsifikatsiyasi (lex.uz).pdf')\nprint('exists=', pdf_path.exists())\nreader = PdfReader(str(pdf_path))\nprint('pages=', len(reader.pages))\ntext = '\\n'.join(page.extract_text() or '' for page in reader.pages)\nprint(text[:20000])"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "List local PDF files",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz - Copy\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"from glob import glob; files = glob(r'C:\\Users\\Javoh\\AppData\\Local\\Packages\\38833FF26BA1D.UnigramPreview_g9c9v27vpyspw\\LocalState\\0\\documents\\*.pdf'); print(files)"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "List local PDF files 2",
+			"type": "shell",
+			"command": "C:\\Users\\Javoh\\Desktop\\Lex.uz - Copy\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"from glob import glob; files = glob(r\"C:\\Users\\Javoh\\AppData\\Local\\Packages\\38833FF26BA1D.UnigramPreview_g9c9v27vpyspw\\LocalState\\0\\documents\\*.pdf\"); print(files)"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		}
+	]
+}
